@@ -88,7 +88,7 @@ app.get('/categoriasEquipo/get/', function (request, response) {
 
 })
 
-//3d
+//3c -eric
 
 app.get('/sitios/get/', function (request, response) {
 
@@ -103,9 +103,9 @@ app.get('/sitios/get/', function (request, response) {
     })
 
 })
-
+//3d-eric
 app.get('/sitios/get/:id', function (request, response) {
-
+    var paramid = request.params.id;
     var query2 = 'SELECT s.codigoSitio, s.idCentroPoblado, s.latitud, s.longitud, s.idSitio, c.nombreCentroPoblado, count(s.idCentroPoblado) as cantidad FROM equipos e inner join sitios s on e.idSitio = s.idSitio inner join centrospoblados c on c.idCentroPoblado = s.idCentroPoblado;';
 
     conn.query(query2, function (err, resultado) {
@@ -117,6 +117,11 @@ app.get('/sitios/get/:id', function (request, response) {
     })
 
 })
+
+
+
+
+
 
 
 //GABO 1b
